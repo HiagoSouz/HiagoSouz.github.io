@@ -23,12 +23,13 @@ docReady(function() {
     
     function onScanSuccess(decodedText) {
         isFaulty = true;
-        positionResult.innerHTML = `</div>`;
-        orderResult.innerHTML = `</div>`;
+        
         snd.play();
 
         if (decodedText !== lastResult) {
             lastResult = decodedText;
+            positionResult.innerHTML = `</div>`;
+            orderResult.innerHTML = `</div>`;
 
             if(decodedText.length==8 && decodedText.match(/^([a-zA-Z0-9 _-]+)$/)){
                 orderResult.innerHTML += `${decodedText}</div>`;
