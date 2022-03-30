@@ -16,6 +16,9 @@ docReady(function() {
     var lastResult;
     var snd = new Audio("assets/beep-01a.mp3");  
 
+    const soundEffect = new Audio();
+    soundEffect.autoplay = true;
+
     
     var html5QrcodeScanner = new Html5QrcodeScanner(
         "qr-reader", { fps: 10, qrbox: 250 });
@@ -24,7 +27,6 @@ docReady(function() {
     function onScanSuccess(decodedText) {
         isFaulty = true;
         
-        snd.play();
 
         if (decodedText !== lastResult) {
             lastResult = decodedText;
@@ -49,7 +51,8 @@ docReady(function() {
             
             else{
                 document.getElementById("header").style.backgroundColor = '#E18181';
-                navigator.vibrate(200);
+                navigator.vibrate(300);
+                soundEffect.src = "assets/beep-01a.mp3"
                 positionResult.innerHTML = `</div>`;
                 orderResult.innerHTML = `</div>`;
             }
