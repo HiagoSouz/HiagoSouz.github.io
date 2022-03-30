@@ -1,0 +1,48 @@
+.scanner-app{
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#header{
+    border-bottom: 3px solid black;
+    text-align: center;
+    padding: 25px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.scan-content{
+    margin: 0 auto;
+}
+
+.results-container .code-field{
+    margin: 10px;
+}
+
+.results-container .code-result{
+    width: 50%;
+    height: 20px;
+    border: 1px solid;
+    margin-left: 10px;
+}
+
+.code-result p{
+    margin: 0 0 0 5px;
+}
+
+#qr-reader{
+    width: 500px;
+    margin: 25px 0;
+}
+
+#qr-reader div img{
+    display: none;
+}
+
+#qr-reader #qr-reader__scan_region img{
+    display: initial;
+}
